@@ -1,11 +1,17 @@
-#con-Input {
+#conInput {
   float: left;
   padding: 5px;
   background-color: darkgray;
+  font-family: 100% Helvatica, sans-serif;
 }
 
 body {
   text-align: center;
   padding-top: 5px;
+}
+
+#btn-Edit {
+  color: blue;
+  font-family: 100% Helvatica, sans-serif;
 }
 /*# sourceMappingURL=TODO.css.map */

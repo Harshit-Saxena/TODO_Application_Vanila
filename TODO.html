@@ -1,34 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="sylesheet/css" type="" href="./TODO.css">
-</head>
-<body>
-    <div class="container">
-        <div class="con-Header">
-            TODO Application
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="sylesheet" type="" href="./TODO.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="con-Header">
+                TODO Application
+            </div>
+            <div class="con-body">
+                <div class="conInputTask" id="conInput">
+                    <input type="text" name="Input the task here" value="" id="inputTask">
+                    <button id="addTask" type="button" onclick="addTaskToPending()">Add Task</button>
+                </div>
+                <div class="con-AllTask">
+                    <TABLE>
+                        <TR>
+                            <TD><input id="cbStrike" onclick="doneTask(this)" style={taskComplete} type="checkbox" name="DoneTask" value=""></TD>
+                            <!--this is where we put strike through -->
+                            <TD id="todoTask">sample todo task</TD>
+                            <!--this is where we put the todo Task-->
+                            <TD><input id="btnEdit" onclick="EditTask()" type="button" name="Edit" value="Edit"></TD>
+                            <!--this is Edit the todo-->
+                            <TD><input id="btnDelete" onclick="deleteTask()"type="button" name="Delete" value="Delete"></TD>
+                            <!--this is Delete the todo-->
+                        </TR>
+                        <TR>
+                            <TD><input id="cbStrike" type="checkbox" name="" value=""></TD>
+                            <!--this is where we put strike through -->
+                            <TD id="todoTask">sample todo task</TD>
+                            <!--this is where we put the todo Task-->
+                            <TD><input id="btnEdit" type="button" name="Edit" value="Edit"></TD>
+                            <!--this is Edit the todo-->
+                            <TD><input id="btnDelete" type="button" name="Delete" value="Delete"></TD>
+                            <!--this is Delete the todo-->
+                        </TR>
+                        <TR>
+                            <TD><input id="cbStrike" type="checkbox" name="" value=""></TD>
+                            <!--this is where we put strike through -->
+                            <TD id="todoTask">sample todo task</TD>
+                            <!--this is where we put the todo Task-->
+                            <TD><input id="btnEdit" type="button" name="Edit" value="Edit"></TD>
+                            <!--this is Edit the todo-->
+                            <TD><input id="btnDelete" type="button" name="Delete" value="Delete"></TD>
+                            <!--this is Delete the todo-->
+                        </TR>
+                    </TABLE>
+                </div>
+                <div class="footer">
+
+                </div>
+            </div>
         </div>
-        <div class="con-body">
-            <div class="con-InputTask" id="con-Input">
-                <input type="text" name="Input the task here" value="" id="inputTask">
-                <button type="button" onclick="addTaskToPending">Add Task</button>
-            </div>
-            <div class="con-AllTask">
-                <table>
-                    <tr>
-                        <td> this is the data - sample task</td>
-                        <td value= "test"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="footer">
-                
-            </div>
-        </div>
-    </div>
-</body>
+        <script src="TODO.js"></script>
+    </body>
+
 </html>
