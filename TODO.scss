@@ -43,9 +43,61 @@ body{
 }
 .contentAllTask{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.inputTask{
+    border: none;
+    outline: none;
+}
+/* .inputTask:hover{
+    outline: none;
+} */
+.todoList {
+    min-width: 30%;
+    margin: 10px;
+    
+}
+.todo {
+    background: white;
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    color: black;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+.checkedBtn , .editBtn , .trashBtn {
+    color: $btn-color;
+    background-color: white;
+    border: none; 
+    padding: 0.3rem;
+}
+.checkedBtn:hover{
+    color: white;
+    background:yellowgreen;
+     border: none;
+
+}
+.editBtn:hover{
+    color: white;
+    background:green;
+     border: none;
+
+
+
+}
+.trashBtn:hover {
+     background:red;
+     color: white;
+     border: none;
+}
+
+
 form{
-    padding:    10px ; 
+    padding: 10px ; 
     background-color: white;
 }
 ul{

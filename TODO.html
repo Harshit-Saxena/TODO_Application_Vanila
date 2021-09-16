@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
             integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
+         <link rel="shortcut icon" href="#"> <!--  this is to remove fevicon error  -->
     </head>
 
     <body>
@@ -20,15 +21,15 @@
             <div class="contentBody">
                 <div class="contentInputTask" id="conInput">
                     <form>
-                        <input type="text" name="Input the task here" value="" id="inputTask" onchange="onChangeTask()">
-                        <i class="fas fa-plus-square addIcon" type="submit" onclick="addTaskToPending()"></i>
-                        
-                    </form>
-                    
+                        <input type="text" name="Input the task here" class="no-outline inputTask" value="" id="inputTask"  placeholder="Enter Tasks"/>
+                            <button class="addIcon" type="submit" >
+                            <i class="fas fa-plus-square " type="submit"></i>
+                            </button>
+                        </form>
                 </div>
                 <div class="contentAllTask">
                    <!-- * here will the task that will be added by client -->
-                   <ul>
+                   <ul class="taskList">
                      <!-- <li>
                         <i class="far fa-trash-alt"></i> task 1 
                      </li>

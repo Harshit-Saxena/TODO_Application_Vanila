@@ -1,10 +1,4 @@
-var taskStrike = 'pointer-events: none; text-decoration: line-through; padding-left: 5px; cursor: pointer;';
-function addTaskToPending(event)
-{
-    debugger;
-   // let tsk = document.getElementById('addTask').createElement(table, [tr]);
-}
-function doneTask(checkboxElem) { //! Strike through the task that has been done [css-- text-decoration: line-through]
+/* function doneTask(checkboxElem) { //! Strike through the task that has been done [css-- text-decoration: line-through]
     debugger;
     let taskComplete = $('.cbStrike:checked').val();
     console.log(taskComplete);
@@ -13,14 +7,51 @@ function doneTask(checkboxElem) { //! Strike through the task that has been done
     } else {
     var taskStrike = 'pointer-events: none; padding-left: 5px; cursor: pointer;';
     }
+} */
+
+//*Selectors
+const todoInput = document.querySelector('.inputTask');
+const todoButton = document.querySelector('.addIcon');
+const todoList = document.querySelector('.taskList');
+const todoDelete = document.querySelector('.trashBtn');
+//* Event Listners
+todoButton.addEventListener("click", addTodo);
+//todoDelete.addEventListener("click", delTodo);
+
+//*  Functions
+
+    function addTodo(event)
+    {
+        event.preventDefault(); //! prevnet form from reloading again
+        //* Todo DIV
+        const todoDiv = document.createElement('div');
+        todoDiv.classList.add('todo');
+        //* Todo checked button 
+        const todoChecked = document.createElement('button');
+        todoChecked.innerHTML = '<i class="fas fa-check"</i>';
+        todoChecked.classList.add('checkedBtn');
+        todoDiv.appendChild(todoChecked);
+        //* new list for Todo
+            const newTodo = document.createElement('li');
+            newTodo.innerText = todoInput.value;
+            newTodo.classList.add('newTodoItem');
+            todoDiv.appendChild(newTodo);
+        //* Todo edit button
+        const todoEdit = document.createElement('button');
+        todoEdit.classList.add('editBtn');
+        todoEdit.innerHTML = '<i class="fas fa-edit"></i>';
+        todoDiv.appendChild(todoEdit);
+        //* Todo trash button
+        const todoTrash = document.createElement('button');
+        todoTrash.classList.add('trashBtn');
+        todoTrash.innerHTML = '<i class="fas fa-trash"</i>';
+        todoDiv.appendChild(todoTrash);
+        todoList.appendChild(todoDiv);
+        //* clearing the Input value to blank
+        todoInput.value = '';
+    }
+
+function delTodo(event) {
+    console.log('deleting the task');
+ 
 }
-function editTask(event) {//! Edit the task in line [NO MODAL]
-    debugger;
-}
-function deleteTask(event) {//! Delete the task and move the task count decriment 1
-    debugger; 
-}
-function onChangeTask(event){
-    var typeVal = document.querySelector('input').val();
-    console.log(typeVal);
-}   

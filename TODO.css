@@ -55,6 +55,68 @@ body {
 
 .contentAllTask {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.inputTask {
+  border: none;
+  outline: none;
+}
+
+/* .inputTask:hover{
+    outline: none;
+} */
+.todoList {
+  min-width: 30%;
+  margin: 10px;
+}
+
+.todo {
+  background: white;
+  margin: 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  color: black;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.checkedBtn, .editBtn, .trashBtn {
+  color: #d88771;
+  background-color: white;
+  border: none;
+  padding: 0.3rem;
+}
+
+.checkedBtn:hover {
+  color: white;
+  background: yellowgreen;
+  border: none;
+}
+
+.editBtn:hover {
+  color: white;
+  background: green;
+  border: none;
+}
+
+.trashBtn:hover {
+  background: red;
+  color: white;
+  border: none;
 }
 
 form {
