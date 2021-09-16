@@ -1,16 +1,62 @@
 $btn-font-stack : Helvatica, sans-serif ; 
+$btn-color: #d88771;
+$bgPrimaryColor: linear-gradient(120deg, #f6d365, #fda085); 
 #conInput {
-    float: left; 
     padding: 5px; 
-    background-color: darkgray ; 
-    font-family: 100% $btn-font-stack;
- }
-body{
-    text-align: center;
-    padding-top: 5px;
-}
-#btn-Edit{
-    color: blue;
     font-family: 100% $btn-font-stack;
 
+ }
+body{
+    background-image: $bgPrimaryColor;
+    min-height: 100vh;
+
+}
+.Header {
+    font-size: 1.6rem;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.contentInputTask {
+    min-height: 20vh;
+    display: flex ; 
+    justify-content: center;
+    align-items: center;
+    border: none; 
+    background: inherit;
+
+}
+.addIcon{
+     color: white;
+     font-family: 100% $btn-font-stack;
+     background-color: $btn-color;
+     border: none;
+     cursor: pointer;
+     transition-duration: 0.3s;
+
+}
+.addIcon:hover{
+   background: white;
+   color: $btn-color;
+}
+.contentAllTask{
+    text-align: center;
+}
+form{
+    padding:    10px ; 
+    background-color: white;
+}
+ul{
+    list-style-type: none;
+}
+.footer{
+    text-align: center;
+}
+*{
+    margin: 0 ; 
+    padding: 0 ; 
+    box-sizing: border-box;
+   
 }

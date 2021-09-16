@@ -1,17 +1,79 @@
 #conInput {
-  float: left;
   padding: 5px;
-  background-color: darkgray;
   font-family: 100% Helvatica, sans-serif;
 }
 
 body {
-  text-align: center;
-  padding-top: 5px;
+  background-image: linear-gradient(120deg, #f6d365, #fda085);
+  min-height: 100vh;
 }
 
-#btn-Edit {
-  color: blue;
+.Header {
+  font-size: 1.6rem;
+  min-height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+}
+
+.contentInputTask {
+  min-height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  background: inherit;
+}
+
+.addIcon {
+  color: white;
   font-family: 100% Helvatica, sans-serif;
+  background-color: #d88771;
+  border: none;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.addIcon:hover {
+  background: white;
+  color: #d88771;
+}
+
+.contentAllTask {
+  text-align: center;
+}
+
+form {
+  padding: 10px;
+  background-color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.footer {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 /*# sourceMappingURL=TODO.css.map */

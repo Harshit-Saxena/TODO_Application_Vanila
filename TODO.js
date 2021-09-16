@@ -20,3 +20,7 @@ function editTask(event) {//! Edit the task in line [NO MODAL]
 function deleteTask(event) {//! Delete the task and move the task count decriment 1
     debugger; 
 }
+function onChangeTask(event){
+    var typeVal = document.querySelector('input').val();
+    console.log(typeVal);
+}   

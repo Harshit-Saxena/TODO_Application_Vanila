@@ -4,56 +4,44 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="sylesheet" type="" href="./TODO.css">
+        <title>TODO Application</title>
+        <link rel="stylesheet" type="text/css" href="./TODO.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 
     <body>
         <div class="container">
-            <div class="con-Header">
-                TODO Application
+            <div class="Header">
+              <h1>TODO Application</h1>  
             </div>
-            <div class="con-body">
-                <div class="conInputTask" id="conInput">
-                    <input type="text" name="Input the task here" value="" id="inputTask">
-                    <button id="addTask" type="button" onclick="addTaskToPending()">Add Task</button>
+            <br>
+            <div class="contentBody">
+                <div class="contentInputTask" id="conInput">
+                    <form>
+                        <input type="text" name="Input the task here" value="" id="inputTask" onchange="onChangeTask()">
+                        <i class="fas fa-plus-square addIcon" type="submit" onclick="addTaskToPending()"></i>
+                        
+                    </form>
+                    
                 </div>
-                <div class="con-AllTask">
-                    <TABLE>
-                        <TR>
-                            <TD><input id="cbStrike" onclick="doneTask(this)" style={taskComplete} type="checkbox" name="DoneTask" value=""></TD>
-                            <!--this is where we put strike through -->
-                            <TD id="todoTask">sample todo task</TD>
-                            <!--this is where we put the todo Task-->
-                            <TD><input id="btnEdit" onclick="EditTask()" type="button" name="Edit" value="Edit"></TD>
-                            <!--this is Edit the todo-->
-                            <TD><input id="btnDelete" onclick="deleteTask()"type="button" name="Delete" value="Delete"></TD>
-                            <!--this is Delete the todo-->
-                        </TR>
-                        <TR>
-                            <TD><input id="cbStrike" type="checkbox" name="" value=""></TD>
-                            <!--this is where we put strike through -->
-                            <TD id="todoTask">sample todo task</TD>
-                            <!--this is where we put the todo Task-->
-                            <TD><input id="btnEdit" type="button" name="Edit" value="Edit"></TD>
-                            <!--this is Edit the todo-->
-                            <TD><input id="btnDelete" type="button" name="Delete" value="Delete"></TD>
-                            <!--this is Delete the todo-->
-                        </TR>
-                        <TR>
-                            <TD><input id="cbStrike" type="checkbox" name="" value=""></TD>
-                            <!--this is where we put strike through -->
-                            <TD id="todoTask">sample todo task</TD>
-                            <!--this is where we put the todo Task-->
-                            <TD><input id="btnEdit" type="button" name="Edit" value="Edit"></TD>
-                            <!--this is Edit the todo-->
-                            <TD><input id="btnDelete" type="button" name="Delete" value="Delete"></TD>
-                            <!--this is Delete the todo-->
-                        </TR>
-                    </TABLE>
+                <div class="contentAllTask">
+                   <!-- * here will the task that will be added by client -->
+                   <ul>
+                     <!-- <li>
+                        <i class="far fa-trash-alt"></i> task 1 
+                     </li>
+                    <li>
+                        <i class="far fa-trash-alt"></i> task 2
+                    </li>
+                    <li>
+                        <i class="far fa-trash-alt"></i> task 3
+                    </li> -->
+                   </ul>    
                 </div>
                 <div class="footer">
-
+                    <p>this is the footer</p>
                 </div>
             </div>
         </div>
