@@ -68,6 +68,7 @@ body{
     color: black;
     justify-content: space-between;
     font-size: 1.5rem;
+    transition: all 0.5 ease;
 }
 .checkedBtn , .editBtn , .trashBtn {
     color: $btn-color;
@@ -78,16 +79,13 @@ body{
 .checkedBtn:hover{
     color: white;
     background:yellowgreen;
-     border: none;
+    border: none;
 
 }
 .editBtn:hover{
     color: white;
     background:green;
-     border: none;
-
-
-
+    border: none;
 }
 .trashBtn:hover {
      background:red;
@@ -101,7 +99,9 @@ form{
     background-color: white;
 }
 ul{
+    //.Tasklist
     list-style-type: none;
+    width: 35%;
 }
 .footer{
     text-align: center;
@@ -112,3 +112,21 @@ ul{
     box-sizing: border-box;
    
 }
+.fa-trash , .fa-check{
+    pointer-events: none;
+}
+.checked{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.fall{
+    transform: translateX(8rem) rotateZ(45deg);
+    opacity: 0;
+}
+.newTodoItem{
+    width: inherit;
+    text-align: start;
+    margin-left: 1.5rem;
+    overflow: auto;
+}
+

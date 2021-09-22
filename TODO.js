@@ -16,7 +16,7 @@ const todoList = document.querySelector('.taskList');
 const todoDelete = document.querySelector('.trashBtn');
 //* Event Listners
 todoButton.addEventListener("click", addTodo);
-//todoDelete.addEventListener("click", delTodo);
+todoList.addEventListener('click', deleteTodoTask);
 
 //*  Functions
 
@@ -32,10 +32,10 @@ todoButton.addEventListener("click", addTodo);
         todoChecked.classList.add('checkedBtn');
         todoDiv.appendChild(todoChecked);
         //* new list for Todo
-            const newTodo = document.createElement('li');
-            newTodo.innerText = todoInput.value;
-            newTodo.classList.add('newTodoItem');
-            todoDiv.appendChild(newTodo);
+        const newTodo = document.createElement('li');
+        newTodo.innerText = todoInput.value;
+        newTodo.classList.add('newTodoItem');
+        todoDiv.appendChild(newTodo);
         //* Todo edit button
         const todoEdit = document.createElement('button');
         todoEdit.classList.add('editBtn');
@@ -51,7 +51,26 @@ todoButton.addEventListener("click", addTodo);
         todoInput.value = '';
     }
 
-function delTodo(event) {
-    console.log('deleting the task');
+function deleteTodoTask(event) {
+    const item = event.target;
+    // To Delete the selected list
+    if (item.classList[0] === 'trashBtn'){
+        const todoDelParent = item.parentElement;
+        //Animation for Trashing the task
+        todoDelParent.classList.add("fall");
+        todoDelParent.addEventListener('transitionend' , function(){
+            todoDelParent.remove(); 
+        });
+        
+    }
+    //check the completed task
+    if (item.classList[0] === 'checkedBtn') {
+        const todoChkParent = item.parentElement;
+        todoChkParent.classList.toggle('checked');
+    }
+   /*  if (item.classList[0] === 'editBtn') {
+        const todoEditParent = item.parentElement;
+        todoEditParent.classList;
+    } */
  
 }

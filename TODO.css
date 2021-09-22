@@ -92,6 +92,8 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 1.5rem;
+  -webkit-transition: all 0.5 ease;
+  transition: all 0.5 ease;
 }
 
 .checkedBtn, .editBtn, .trashBtn {
@@ -126,6 +128,7 @@ form {
 
 ul {
   list-style-type: none;
+  width: 35%;
 }
 
 .footer {
@@ -137,5 +140,27 @@ ul {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.fa-trash, .fa-check {
+  pointer-events: none;
+}
+
+.checked {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  -webkit-transform: translateX(8rem) rotateZ(45deg);
+          transform: translateX(8rem) rotateZ(45deg);
+  opacity: 0;
+}
+
+.newTodoItem {
+  width: inherit;
+  text-align: start;
+  margin-left: 1.5rem;
+  overflow: auto;
 }
 /*# sourceMappingURL=TODO.css.map */
