@@ -20,12 +20,20 @@
             <br>
             <div class="contentBody">
                 <div class="contentInputTask" id="conInput">
+                    
                     <form>
-                        <input type="text" name="Input the task here" class="no-outline inputTask" value="" id="inputTask"  placeholder="Enter Tasks"/>
+                        <input type="text" name="Input the task here" class="no-outline inputTask" value="" onchange="inputValChange" id="inputTask" required="" placeholder="Enter Tasks"/>
                             <button class="addIcon" type="submit" >
-                            <i class="fas fa-plus-square " type="submit"></i>
+                                <i class="fas fa-plus-square " type="submit"></i>
                             </button>
-                        </form>
+                    </form>
+                    <div class="select">
+                        <select name="todoTask" class="filter-todo">
+                            <option value="all">All</option>
+                            <option value="completed">Completed</option>
+                            <option value="uncompleted">Uncompleted</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="contentAllTask">
                    <!-- * here will the task that will be added by client -->

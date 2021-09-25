@@ -152,9 +152,8 @@ ul {
 }
 
 .fall {
-  -webkit-transform: translateX(8rem) rotateZ(45deg);
-          transform: translateX(8rem) rotateZ(45deg);
-  opacity: 0;
+  -webkit-transform: translateY(8rem) rotateZ(20deg);
+          transform: translateY(8rem) rotateZ(20deg);
 }
 
 .newTodoItem {
@@ -162,5 +161,49 @@ ul {
   text-align: start;
   margin-left: 1.5rem;
   overflow: auto;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  appearance: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: #d88771;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background-color: #d88771;
+  color: white;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.select::hover::after {
+  color: #d88771;
+  background-color: #f6d365;
+}
+
+.select:hover:after {
+  background-color: white;
+  color: #d88771;
 }
 /*# sourceMappingURL=TODO.css.map */

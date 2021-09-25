@@ -14,14 +14,23 @@ const todoInput = document.querySelector('.inputTask');
 const todoButton = document.querySelector('.addIcon');
 const todoList = document.querySelector('.taskList');
 const todoDelete = document.querySelector('.trashBtn');
+const todoLi = document.querySelector('.newTodoItem');
+const inputVal = document.querySelector('.inputTask').value; 
+const filterOption = document.querySelector('.filter-todo');
 //* Event Listners
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener('click', deleteTodoTask);
+filterOption.addEventListener('click', filterTodo);
+//* Validation
 
 //*  Functions
-
-    function addTodo(event)
-    {
+function inputValChange(event) {
+        let inputValue = event.target;
+        console.log(inputValue);
+       // inputValue = '';
+}
+function addTodo(event)
+{
         event.preventDefault(); //! prevnet form from reloading again
         //* Todo DIV
         const todoDiv = document.createElement('div');
@@ -49,28 +58,58 @@ todoList.addEventListener('click', deleteTodoTask);
         todoList.appendChild(todoDiv);
         //* clearing the Input value to blank
         todoInput.value = '';
-    }
+    
+}
 
 function deleteTodoTask(event) {
-    const item = event.target;
-    // To Delete the selected list
-    if (item.classList[0] === 'trashBtn'){
-        const todoDelParent = item.parentElement;
-        //Animation for Trashing the task
-        todoDelParent.classList.add("fall");
-        todoDelParent.addEventListener('transitionend' , function(){
-            todoDelParent.remove(); 
-        });
+        const item = event.target;
+        // To Delete the selected list
+        if (item.classList[0] === 'trashBtn'){
+            const todoDelParent = item.parentElement;
+                todoDelParent.remove();
+
+            //Animation for Trashing the task
+            /* todoDelParent.classList.add("fall");
+            todoDelParent.addEventListener('transitionend' , function(){
+                todoDelParent.remove(); 
+            }); */
         
     }
     //check the completed task
-    if (item.classList[0] === 'checkedBtn') {
-        const todoChkParent = item.parentElement;
-        todoChkParent.classList.toggle('checked');
+   else if (item.classList[0] === 'checkedBtn') {
+            const todoChkParent = item.parentElement;
+            todoChkParent.classList.toggle('checked');
     }
-   /*  if (item.classList[0] === 'editBtn') {
-        const todoEditParent = item.parentElement;
-        todoEditParent.classList;
-    } */
+   else if (item.classList[0] === 'editBtn') {
+            const todoEditParent = item.parentElement;
+            console.log(todoLi.value);
+        
+    }
  
+}
+function filterTodo(event) { //! this is the option to filter out the task depending upon the class of the button
+    const todos = todoList.childNodes;
+    todos.forEach(function (todo)
+    {
+        switch (event.target.value) {
+            case "all":
+                todo.style.display = "flex";
+                break;
+            case "completed":
+                if (todo.classList.contains('checked')) {
+                   todo.style.display = "flex";
+                } else {
+                     todo.style.display = "none";
+                }
+                break;
+            case "uncompleted":
+                if (!todo.classList.contains('checked')) {
+                   todo.style.display = "flex";
+                } else {
+                    todo.style.display = 'none';
+                }
+                break;
+       }
+    });
+    
 }
