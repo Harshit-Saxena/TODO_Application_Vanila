@@ -142,7 +142,9 @@ ul {
           box-sizing: border-box;
 }
 
-.fa-trash, .fa-check {
+.fa-trash,
+.fa-check,
+.fa-edit {
   pointer-events: none;
 }
 

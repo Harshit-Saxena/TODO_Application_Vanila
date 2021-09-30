@@ -82,7 +82,8 @@ function deleteTodoTask(event) {
     }
    else if (item.classList[0] === 'editBtn') {
             const todoEditParent = item.parentElement;
-            console.log(todoLi.value);
+            console.log(todoEditParent.value);
+            todoEditParent.classList.innerText
         
     }
  
