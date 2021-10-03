@@ -1,13 +1,4 @@
-/* function doneTask(checkboxElem) { //! Strike through the task that has been done [css-- text-decoration: line-through]
-    debugger;
-    let taskComplete = $('.cbStrike:checked').val();
-    console.log(taskComplete);
-    if (checkboxElem.checked) {
-    var taskStrike = 'pointer-events: none; text-decoration: line-through; padding-left: 5px; cursor: pointer;';
-    } else {
-    var taskStrike = 'pointer-events: none; padding-left: 5px; cursor: pointer;';
-    }
-} */
+// !This is something I tried to solve for myself and getting better at javascript.
 
 //*Selectors
 const todoInput = document.querySelector('.inputTask');
@@ -18,15 +9,16 @@ const todoLi = document.querySelector('.newTodoItem');
 const inputVal = document.querySelector('.inputTask').value; 
 const filterOption = document.querySelector('.filter-todo');
 //* Event Listners
+document.addEventListener("taskReloaded", getTasks);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener('click', deleteTodoTask);
-filterOption.addEventListener('click', filterTodo);
-//* Validation
-
+filterOption.addEventListener('click', filterTodo); 
+//*Global Variables
+var newTodoItemVal;
 //*  Functions
 function inputValChange(event) {
         let inputValue = event.target;
-        console.log(inputValue);
+        //console.log(inputValue);
        // inputValue = '';
 }
 function addTodo(event)
@@ -44,7 +36,10 @@ function addTodo(event)
         const newTodo = document.createElement('li');
         newTodo.innerText = todoInput.value;
         newTodo.classList.add('newTodoItem');
+        newTodoItemVal = newTodo.innerText;
         todoDiv.appendChild(newTodo);
+        //*  Saving Task to the local storage
+        saveLocalTask(todoInput.value);
         //* Todo edit button
         const todoEdit = document.createElement('button');
         todoEdit.classList.add('editBtn');
@@ -66,13 +61,12 @@ function deleteTodoTask(event) {
         // To Delete the selected list
         if (item.classList[0] === 'trashBtn'){
             const todoDelParent = item.parentElement;
-                todoDelParent.remove();
+            todoDelParent.remove();
+            removeTaskFromLocalStorage(todoDiv);
+           // removeTaskFromLocalStorage(todo);
 
             //Animation for Trashing the task
-            /* todoDelParent.classList.add("fall");
-            todoDelParent.addEventListener('transitionend' , function(){
-                todoDelParent.remove(); 
-            }); */
+            /* todoDelParent.classList.add("fall");  todoDelParent.addEventListener('transitionend' , function(){   todoDelParent.remove()}; */
         
     }
     //check the completed task
@@ -80,14 +74,14 @@ function deleteTodoTask(event) {
             const todoChkParent = item.parentElement;
             todoChkParent.classList.toggle('checked');
     }
-   else if (item.classList[0] === 'editBtn') {
+        else if (item.classList[0] === 'editBtn') { //* This is the edit functionality
+            debugger;   
             const todoEditParent = item.parentElement;
-            console.log(todoEditParent.value);
-            todoEditParent.classList.innerText
-        
-    }
- 
-}
+            console.log(newTodoItemVal);
+            todoInput.value = newTodoItemVal;
+            todoEditParent.remove();
+        }
+ }
 function filterTodo(event) { //! this is the option to filter out the task depending upon the class of the button
     const todos = todoList.childNodes;
     todos.forEach(function (todo)
@@ -112,5 +106,68 @@ function filterTodo(event) { //! this is the option to filter out the task depen
                 break;
        }
     });
+    
+}
+function saveLocalTask(todo) {
+    // This will store the task in the local storage
+    let tasks;
+    if (localStorage.getItem("tasks") === null) {
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    tasks.push(todo);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+   
+}
+function getTasks()
+{
+    debugger;
+    let tasks;
+    if (localStorage.getItem("tasks") === null) {
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    tasks.forEach(function(todo)
+    {
+        //* Todo DIV
+        const todoDiv = document.createElement('div');
+        todoDiv.classList.add('todo');
+        //* Todo checked button 
+        const todoChecked = document.createElement('button');
+        todoChecked.innerHTML = '<i class="fas fa-check"</i>';
+        todoChecked.classList.add('checkedBtn');
+        todoDiv.appendChild(todoChecked);
+        //* new list for Todo
+        const newTodo = document.createElement('li');
+        newTodo.innerText = todo;
+        newTodo.classList.add('newTodoItem');
+        newTodoItemVal = newTodo.innerText;
+        todoDiv.appendChild(newTodo);
+        //* Todo edit button
+        const todoEdit = document.createElement('button');
+        todoEdit.classList.add('editBtn');
+        todoEdit.innerHTML = '<i class="fas fa-edit"></i>';
+        todoDiv.appendChild(todoEdit);
+        //* Todo trash button
+        const todoTrash = document.createElement('button');
+        todoTrash.classList.add('trashBtn');
+        todoTrash.innerHTML = '<i class="fas fa-trash"</i>';
+        todoDiv.appendChild(todoTrash);
+        todoList.appendChild(todoDiv);
+        
+    });
+    
+}
+function removeTaskFromLocalStorage(todoDiv) {
+    debugger;
+    let tasks;
+    if (localStorage.getItem("tasks") === null) {
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    console.log(todoDiv);
     
 }
