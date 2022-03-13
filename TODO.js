@@ -8,7 +8,7 @@ const todoDelete = document.querySelector('.trashBtn');
 const todoLi = document.querySelector('.newTodoItem');
 const inputVal = document.querySelector('.inputTask').value; 
 const filterOption = document.querySelector('.filter-todo');
-//* Event Listners
+//* EventListener
 document.addEventListener("taskReloaded", getTasks);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener('click', deleteTodoTask);
